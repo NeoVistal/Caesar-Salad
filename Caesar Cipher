@@ -44,5 +44,29 @@ if kulto == "encode":
             string = string + h
     print(text)
     print(string)
+if kulto == "decode":
+    print("--------------------------------------------------------------------")
+    text = input("Please put your text to decode: ")
+    shift = int(input('please put the num: '))
+    for h in text:
+        if h.isupper():
+            Bogart = ord("A")
+            Elena = ord(h) - Bogart
+            Kulto = (Elena - shift) % 26
+            Mika = Kulto + ord("A")
+            Miguel = chr(Mika)
+            string = string + Miguel
+        elif h.islower():
+            Bogart = ord("a")
+            Elena = ord(h) - Bogart
+            Kulto = (Elena - shift) % 26
+            Mika = Kulto + ord("a")
+            Miguel = chr(Mika)
+            string = string + Miguel 
+        else: 
+            string = string + h
+    print(text)
+    print(string)
+
 
 # ref: https://likegeeks.com/python-caesar-cipher/
